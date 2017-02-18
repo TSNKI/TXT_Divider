@@ -1,4 +1,7 @@
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.DecimalFormat;
 
 /**
@@ -6,7 +9,7 @@ import java.text.DecimalFormat;
  */
 public class Writer {
 
-    private static int count = 0;
+    private static int count = -1;
 
     public static void write(String title, String content) {
 
@@ -45,8 +48,8 @@ public class Writer {
             bw.write(fileContent);
             bw.close();
         } catch (IOException e) {
-            e.printStackTrace();
             count--;
+            e.printStackTrace();
         }
     }
 
